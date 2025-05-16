@@ -1,6 +1,6 @@
 {
   "name": "@vtubers.tv/semver",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Semantic Versioning Parser and Validator with VTubersTV extensions",
   "main": "dist/index.js",
   "type": "module",
