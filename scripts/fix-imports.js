@@ -13,7 +13,7 @@ function processDirectory(dir) {
         } else if (file.endsWith('.js')) {
             const content = readFileSync(fullPath, 'utf8');
             const updatedContent = content.replace(
-                /from ['"](\.[^'"]+)['"]/g,
+                /from ['"](\.[^'"]+?)(?:\.js)?['"]/g,
                 (match, p1) => `from '${p1}.js'`
             );
             writeFileSync(fullPath, updatedContent);
