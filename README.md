@@ -11,20 +11,35 @@ Official Semantic Versioning Parser and Validator for VTubers.TV services. This 
 - 📚 Well-documented API
 - ✨ Public version mapping support
 - 🔄 Version comparison and increment utilities
+- 🖥️ Command-line interface (CLI)
 
 ## Installation
 
 Since this is an internal package, install it directly from the GitHub repository:
 
 ```bash
+# Using npm
+# Install globally to use the CLI
+npm install -g git://github.com/vtuberstv/semver.git
+# or locally as a dependency
 npm install git://github.com/vtuberstv/semver.git
-# or
+
+# Using Yarn
+# Install globally to use the CLI
+yarn global add git://github.com/vtuberstv/semver.git
+# or locally as a dependency
 yarn add git://github.com/vtuberstv/semver.git
-# or
+
+# Using pnpm
+# Install globally to use the CLI
+pnpm add -g git://github.com/vtuberstv/semver.git
+# or locally as a dependency
 pnpm add git://github.com/vtuberstv/semver.git
 ```
 
 ## Quick Start
+
+### Using as a Library
 
 ```typescript
 import SemVer from '@vtubers.tv/semver'
@@ -59,6 +74,34 @@ console.log(SemVer.increment('1.2.3', 'minor')) // '1.3.0'
 console.log(SemVer.increment('1.2.3', 'major', 'alpha')) // '2.0.0-alpha'
 ```
 
+### Using the CLI
+
+The package includes a command-line interface for common version management tasks:
+
+```bash
+# Validate versions (both semantic and public)
+semver validate 1.0.0
+semver validate Aurora-1.0-beta
+
+# Compare two versions
+semver compare 1.0.0 2.0.0
+semver compare 1.0.0-alpha 1.0.0-beta
+
+# Increment versions
+semver increment 1.0.0 major
+semver increment 1.0.0 minor --pre=beta
+semver increment 1.0.0 patch --build=20240301
+
+# Show help
+semver --help
+semver <command> --help
+```
+
+Available Commands:
+- `validate <version>` - Validate a semantic or public version string
+- `compare <version1> <version2>` - Compare two version strings
+- `increment <version> (major|minor|patch) [--pre=alpha] [--build=001]` - Increment a version number
+
 ## Documentation
 
 The package includes comprehensive documentation for all features:
@@ -69,6 +112,7 @@ The package includes comprehensive documentation for all features:
 - [Version Comparison](./docs/version-comparison.md) - Comparison rules and examples
 - [Version Mapping](./docs/version-mapping.md) - Internal to public version mapping
 - [API Reference](./docs/api-reference.md) - Complete API documentation
+- [CLI Guide](./docs/cli-guide.md) - Command-line interface documentation
 
 See the [full documentation](./docs/README.md) for detailed examples and usage guidelines.
 

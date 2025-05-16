@@ -11,13 +11,17 @@
       "default": "./dist/index.js"
     }
   },
+  "bin": {
+    "semver": "./dist/cli/index.js"
+  },
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && node scripts/fix-imports.js",
     "prepare": "npm run build",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "run:cli": "node dist/cli/index.js"
   },
   "keywords": [
     "vtubers.tv",

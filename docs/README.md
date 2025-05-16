@@ -33,7 +33,13 @@ Welcome to the comprehensive documentation for the VTubers.TV Semantic Versionin
    - Metadata Management
    - Release Notes
 
-6. [API Reference](./api-reference.md)
+6. [CLI Guide](./cli-guide.md)
+   - Command Overview
+   - Usage Examples
+   - Error Handling
+   - Best Practices
+
+7. [API Reference](./api-reference.md)
    - Core Functions
    - Types and Interfaces
    - Error Types
